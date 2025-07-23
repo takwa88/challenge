@@ -1,0 +1,74 @@
+body {
+  background-color: white;
+  /* The background of the whole page is white */
+
+  display: flex;
+  /* The body uses flexbox layout (items will be side by side) */
+}
+
+.wrapper {
+  margin: 0;
+  /* No space around the wrapper */
+
+  background-color: #0a0a0a;
+  /* The background color of the wrapper is very dark (almost black) */
+
+  display: flex;
+  /* The wrapper also uses flexbox layout */
+
+  justify-content: center;
+  /* All boxes inside will be centered horizontally */
+
+  gap: 10px;
+  /* 10 pixels of space between the boxes */
+
+  padding: 30px;
+  /* 30 pixels of space inside the wrapper (all sides) */
+
+  border-radius: 16px;
+  /* Rounded corners for the wrapper */
+
+  overflow: hidden;
+  /* Anything going outside the wrapper will be hidden */
+}
+
+.box {
+  background-color: red;
+  /* The default color of each box is red */
+
+  display: inline-block;
+  /* The box is an inline-block element (can have width/height) */
+
+  width: 180px;
+  /* Initial width of the box */
+
+  height: 180px;
+  /* Height of the box */
+
+  border-radius: 12px;
+  /* Rounded corners for the box */
+
+  cursor: pointer;
+  /* The mouse cursor changes to a hand when over the box */
+
+  transition: width 0.2s ease, background-color 0.2s ease;
+  /* When size or color changes, the change will animate smoothly in 0.2s */
+
+  flex-shrink: 0;
+  /* The box will not shrink when the window is small */
+}
+
+/* Hover effect (when mouse is over one box) */
+.box:hover {
+  background-color: yellow;
+  /* The box turns yellow on hover */
+
+  width: 300px;
+  /* The box becomes wider when hovered */
+}
+
+.wrapper:hover .box:not(:hover) {
+  width: 120px;
+  /* When the mouse is on the wrapper, but not on a specific box,
+     all the other boxes become smaller */
+}
